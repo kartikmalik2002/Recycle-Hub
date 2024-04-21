@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "47710496685",
+    "project_id": "recycle-hub-9f5c3",
+    "storage_bucket": "recycle-hub-9f5c3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:47710496685:android:e43479477ce073e6a82324",
+        "android_client_info": {
+          "package_name": "com.example.recyclehub"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDstY5Fx_2J0Yn2ihhXF8HF_5s6LgZifG4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">Recycle Hub</string>
+    <string name="please_wait">Please Wait&#8230;</string>
+    <string name="log_in">Log In</string>
+    <string name="enter_email_and_password">Enter your email id and password to continue</string>
+    <string name="enter_your_details">Enter your details to sign up to our application</string>
+    <string name="enter_your_name">Enter your name</string>
+    <string name="enter_your_email">Enter your email</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="already_have_an_account">Already have an account? </string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="nav_my_profile">My Profile\n</string>
+    <string name="nav_sign_out">Sign Out</string>
+    <string name="history">History</string>
+    <string name="Coins">Coins\n</string>
+    <string name="Redeem">Redeem</string>
 </resources>

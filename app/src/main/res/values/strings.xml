@@ -16,4 +16,6 @@
     <string name="history">History</string>
     <string name="Coins">Coins\n</string>
     <string name="Redeem">Redeem</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

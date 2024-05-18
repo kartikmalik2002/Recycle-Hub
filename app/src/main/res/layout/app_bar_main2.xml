@@ -12,22 +12,17 @@
         android:theme="@style/Theme.RecycleHub.AppBarOverlay">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar_main_activity"
+            android:id="@+id/toolbar_select_qty_activity"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
             app:popupTheme="@style/Theme.RecycleHub.PopupOverlay" />
 
     </com.google.android.material.appbar.AppBarLayout>
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerView"
-        android:name="androidx.navigation.fragment.NavHostFragment"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingTop="?attr/actionBarSize"
-        app:defaultNavHost="true"
-        app:navGraph="@navigation/nav_flow_to_request_items" />
 
+    <include layout="@layout/content_select_qty"
+        android:id="@+id/content_select_qty"
+        />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
@@ -38,7 +33,5 @@
         android:src="@drawable/cart_svg"
 
         />
-
-
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

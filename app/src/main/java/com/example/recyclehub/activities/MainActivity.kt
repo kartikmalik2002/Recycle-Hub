@@ -26,13 +26,13 @@ import com.example.recyclehub.databinding.ActivityMainBinding
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 
-val categoryList = listOf(
-    ItemsCategory("Paper",R.drawable.pic_paper ,arrayListOf(Qty("5 - 10",20), Qty("10 - 50", 50), Qty("50 +",100))),
-    ItemsCategory("Glass Bottles",R.drawable.pic_glass_bottles, arrayListOf(Qty("5 - 10",20),Qty("10 - 50", 50),Qty("50 +",100))),
-    ItemsCategory("Plastic Bottles",R.drawable.pic_plastic_bottles, arrayListOf(Qty("5 - 10",20),Qty("10 - 50", 50),Qty("50 +",100))),
-    ItemsCategory("Used Batteries", R.drawable.pic_used_batteries,arrayListOf(Qty("5 - 10",20),Qty("10 - 50", 50),Qty("50 +",100))),
-    ItemsCategory("Electronic Waste", R.drawable.pic_electronic_waste,arrayListOf(Qty("5 - 10",20),Qty("10 - 50", 50),Qty("50 +",100))),
-    ItemsCategory("Solid Waste",R.drawable.pic_solid_waste, arrayListOf(Qty("5 - 10",20),Qty("10 - 50", 50),Qty("50 +",100))),
+val categoryList = mutableListOf(
+    ItemsCategory("Paper",R.drawable.pic_paper ,arrayListOf(Qty("Paper","5 - 10",20,true), Qty("Paper","10 - 50", 50), Qty("Paper","50 +",150))),
+    ItemsCategory("Glass Bottles",R.drawable.pic_glass_bottles, arrayListOf(Qty("Glass Bottles","5 - 10",30, true),Qty("Glass Bottles","10 - 50", 40),Qty("Glass Bottles","50 +",100))),
+    ItemsCategory("Plastic Bottles",R.drawable.pic_plastic_bottles, arrayListOf(Qty("Plastic Bottles","5 - 10",10, true),Qty("Plastic Bottles","10 - 50", 30),Qty("Plastic Bottles","50 +",80))),
+    ItemsCategory("Used Batteries", R.drawable.pic_used_batteries,arrayListOf(Qty("Used Batteries","5 - 10",30, true),Qty("Used Batteries","10 - 50", 70),Qty("Used Batteries","50 +",150))),
+    ItemsCategory("Electronic Waste", R.drawable.pic_electronic_waste,arrayListOf(Qty("Electronic Waste","5 - 10",40, true),Qty("Electronic Waste","10 - 50", 70),Qty("Electronic Waste","50 +",150))),
+    ItemsCategory("Solid Waste",R.drawable.pic_solid_waste, arrayListOf(Qty("Solid Waste","5 - 10",10, true),Qty("Solid Waste","10 - 50", 30),Qty("Solid Waste","50 +",80))),
 
 )
 
@@ -46,6 +46,7 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         binding = ActivityMainBinding.inflate(layoutInflater)
         // This is used to align the xml view to this class
         setContentView(binding.root)
+
         setupActionBar()
 
         // Assign the NavigationView.OnNavigationItemSelectedListener to navigation view.
@@ -53,6 +54,10 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
 
         showProgressDialog(resources.getString(R.string.please_wait))
         FirestoreClass().loadUserData(this@MainActivity)
+
+        binding.appBarMain.fabCart.setOnClickListener {
+            startActivity(Intent(this@MainActivity , PickUpCartActivity::class.java))
+        }
 
     }
 
@@ -115,12 +120,8 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
             R.id.menu_coins -> {
 
                 val intent = Intent(this@MainActivity, CoinDetails::class.java)
-
-                // TODO (Step 2: Start activity for result.)
-                // START
                 startActivity(intent)
                 return true
-                // END
             }
         }
         return super.onOptionsItemSelected(item)

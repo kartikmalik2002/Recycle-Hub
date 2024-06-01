@@ -44,16 +44,7 @@
             android:layout_marginEnd="16dp"
             android:orientation="horizontal"
             >
-            <TextView
-                android:id="@+id/item_select_coins"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
 
-                style="@style/TextAppearance.Material3.BodyLarge"
-                android:layout_gravity="center"
-                android:text="20"
-                android:layout_marginEnd="8dp"
-                />
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

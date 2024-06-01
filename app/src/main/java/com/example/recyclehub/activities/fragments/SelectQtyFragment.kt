@@ -1,15 +1,19 @@
 package com.example.recyclehub.activities.fragments
 
+import android.health.connect.datatypes.units.Length
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.recyclehub.R
 import com.example.recyclehub.activities.adapters.SelectQtyAdapter
 import com.example.recyclehub.activities.categoryList
+import com.example.recyclehub.activities.qtyList
 import com.example.recyclehub.databinding.FragmentSelectQtyBinding
+import java.time.Duration
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -56,9 +60,21 @@ class SelectQtyFragment : Fragment() {
         binding.rvSelectQty.apply {
             layoutManager = LinearLayoutManager(requireContext())
             setHasFixedSize(true)
-            adapter = SelectQtyAdapter(id)
+            adapter = SelectQtyAdapter(id , context)
         }
 
+        binding.btnAddToRequest.setOnClickListener{
+
+            val item = categoryList[id].selectQtyList.filter {
+                it.isSelected
+            }[0]
+            if(qtyList.filter { it.item == categoryList[id].name }.isNotEmpty()){
+                qtyList[qtyList.indexOf(qtyList.filter { it.item == categoryList[id].name }[0])] = item
+            }
+            else
+                qtyList.add(item)
+            Toast.makeText(this.context,"items is added in cart", Toast.LENGTH_SHORT).show()
+        }
         return view
     }
 

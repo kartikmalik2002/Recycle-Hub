@@ -12,7 +12,7 @@
             android:title="@string/history" />
         <item
             android:id="@+id/nav_coins"
-            android:icon="@drawable/coins_png"
+            android:icon="@drawable/coin_without_frame"
             android:title="@string/Coins" />
 
         <item

@@ -71,7 +71,7 @@ class MainFragment : Fragment() {
         }
 
         binding.rvCategoryItems.apply{
-            layoutManager = GridLayoutManager(activity,2)
+            layoutManager = GridLayoutManager(activity,2,GridLayoutManager.VERTICAL,false)
             adapter = categoryAdapter
             setHasFixedSize(true)
         }

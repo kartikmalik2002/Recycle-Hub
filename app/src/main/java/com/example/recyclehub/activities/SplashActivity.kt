@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.recyclehub.R
+import com.google.firebase.auth.FirebaseAuth
 
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,16 +21,22 @@ class SplashActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
         window.setFlags(
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
         )
 
 
+        val  currentUser = FirebaseAuth.getInstance()
+
         Handler().postDelayed({
 
+            if(currentUser != null)
+                startActivity(Intent(this@SplashActivity, MainActivity::class.java))
+            else
+                startActivity(Intent(this@SplashActivity, LogIn::class.java))
 
-            startActivity(Intent(this@SplashActivity, LogIn::class.java))
 
             finish()
         }, 2500)

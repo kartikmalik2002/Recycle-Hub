@@ -1,17 +1,20 @@
 package com.example.recyclehub.activities.adapters
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recyclehub.R
 import com.example.recyclehub.activities.categoryList
+import com.example.recyclehub.activities.qtyList
 import com.google.android.material.card.MaterialCardView
 
-class SelectQtyAdapter(val id : Int): RecyclerView.Adapter<SelectQtyAdapter.SelectQtyViewHolder>() {
+class SelectQtyAdapter(val id : Int , val context : Context): RecyclerView.Adapter<SelectQtyAdapter.SelectQtyViewHolder>() {
 
     private val selectQtyList = categoryList[id].selectQtyList
     class SelectQtyViewHolder( itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -46,9 +49,11 @@ class SelectQtyAdapter(val id : Int): RecyclerView.Adapter<SelectQtyAdapter.Sele
             }
         }
 
+
         if(selectQtyList[position].isSelected){
-            holder.itemView.findViewById<MaterialCardView>(R.id.cv_item_select).strokeColor =
-                R.color.md_theme_light_outline
+            holder.itemView.findViewById<MaterialCardView>(R.id.cv_item_select).
+            setStrokeColor(ContextCompat.getColor(context,R.color.md_theme_light_outline))
+
         }
         else{
             holder.itemView.findViewById<MaterialCardView>(R.id.cv_item_select).strokeColor =

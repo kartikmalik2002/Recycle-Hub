@@ -1,22 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+
+
+    android:orientation="vertical"
+    >
+
+    <com.google.android.material.card.MaterialCardView
+
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
         app:cardBackgroundColor="@color/cardview_light_background"
+        android:layout_gravity="center"
+
+
         app:cardCornerRadius="16dp"
         app:cardElevation="4dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:padding="16dp"
             android:gravity="center"
             android:orientation="vertical"
-            android:padding="10dp">
+            >
 
             <TextView
                 android:id="@+id/tvDialogTitle"
@@ -28,8 +41,6 @@
                 android:gravity="center"
                 android:textStyle="bold" />
 
-
-
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -39,9 +50,10 @@
                     android:id="@+id/et_email_reciever"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
                     android:hint="Email"
                     android:inputType="textEmailAddress"
-                    android:textSize="14dp" />
+                    android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -52,9 +64,10 @@
                     android:id="@+id/et_no_of_coins"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
                     android:hint="Coins"
                     android:inputType="textEmailAddress"
-                    android:textSize="14dp" />
+                    android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
             <Button
                 android:id="@+id/btn_dialog_send_coins"
@@ -66,5 +79,7 @@
 
 
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
-</FrameLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+</LinearLayout>

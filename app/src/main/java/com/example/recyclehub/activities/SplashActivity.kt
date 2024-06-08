@@ -28,15 +28,15 @@ class SplashActivity : AppCompatActivity() {
         )
 
 
-        val  currentUser = FirebaseAuth.getInstance()
+        val  currentUser = FirebaseAuth.getInstance().currentUser
 
         Handler().postDelayed({
 
             if(currentUser != null)
                 startActivity(Intent(this@SplashActivity, MainActivity::class.java))
-            else
-                startActivity(Intent(this@SplashActivity, LogIn::class.java))
 
+            else
+                startActivity(Intent(this@SplashActivity , LogIn::class.java))
 
             finish()
         }, 2500)

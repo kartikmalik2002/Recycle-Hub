@@ -12,6 +12,7 @@ class PickUpCartAdapter(): RecyclerView.Adapter<PickUpCartAdapter.PickUpCartAdap
     class PickUpCartAdapterViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
         val item = itemView.findViewById<TextView>(R.id.tv_item_title)
         val qty = itemView.findViewById<TextView>(R.id.tv_item_qty)
+        val remove = itemView.findViewById<TextView>(R.id.tv_item_remove)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PickUpCartAdapterViewHolder {
@@ -31,6 +32,10 @@ class PickUpCartAdapter(): RecyclerView.Adapter<PickUpCartAdapter.PickUpCartAdap
     override fun onBindViewHolder(holder: PickUpCartAdapterViewHolder, position: Int) {
         holder.item.text = qtyList[position].item
         holder.qty.text = qtyList[position].qty
+        holder.remove.setOnClickListener {
+            qtyList.remove(qtyList[position])
+            notifyDataSetChanged()
+        }
 
     }
 }

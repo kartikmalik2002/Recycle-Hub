@@ -14,7 +14,7 @@
         <ImageView
             android:id="@+id/iv_category_img"
             android:layout_width="match_parent"
-            android:scaleType="fitXY"
+            android:scaleType="centerCrop"
             android:layout_height="224dp"
             android:layout_marginBottom="32dp"
             />
@@ -49,6 +49,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/coin_without_frame"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:text=" per Kg"
                 />
         </LinearLayout>
 
